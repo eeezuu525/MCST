@@ -1,0 +1,2469 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문화체육관광부</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--   <script src="lib/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(function(){
+            //.section-03-2 item_box 에게 마우스 올렸을 때 실행
+            $('.section-03-2 .item_box').on('mouseenter', function(){
+
+            });
+
+        });
+    </script> -->
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+
+
+    <script>
+        window.onload = () => {
+
+
+
+            var swiper = new Swiper(".mySwiper", {
+                spaceBetween: 0,
+                centeredSlides: true,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                speed: 1200,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+
+            /* var swiper = new Swiper(".mySwiper_02", {
+                speed: 400,
+
+                slidesPerView: 1,
+                spaceBetween: 22,
+                pagination: {
+                    el: ".swiper-pagination",
+                    type: "progressbar",
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            }); */
+
+            var swiper = new Swiper(".mySwiper_02", {
+                slidesPerView: 1.3, /* 슬라이드 갯수 */
+                spaceBetween: 22,/* margin 간격 */
+
+                pagination: {
+                    el: ".swiper-pagination",
+                    type: "progressbar",
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+
+                breakpoints: {
+                    501: {
+                        slidesPerView: 2,
+
+                    },
+                    771: {
+                        slidesPerView: 3
+                    },
+                    1025: {
+                        slidesPerView: 4
+                    }
+
+                },
+
+            });
+
+
+            var swiper = new Swiper(".mySwiper_03", {
+                slidesPerView: 1.5,
+                spaceBetween: 22,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+
+                },
+                speed: 1000,
+                breakpoints: {
+                    501: {
+                        slidesPerView: 2.5
+                    },
+                    800: {
+                        slidesPerView: 3
+                    },
+                    1025: {
+                        slidesPerView: 4
+                    }
+                },
+            });
+
+            var swiper = new Swiper(".mySwiper_04", {
+                slidesPerView: 3, /* 슬라이드 갯수 */
+                spaceBetween: 23,/* margin 간격 */
+
+
+
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+
+                breakpoints: {
+                    0: {
+                        loop: true,
+                        slidesPerView: 'auto',
+                        centeredSlides: true,
+                        spaceBetween: 23
+                    },
+
+                 /*    769: {
+                        slidesPerView: 3,
+                        spaceBetween: 23
+                    },
+ */
+                    901: {
+                        slidesPerView: 3,
+                        spaceBetween: 23
+
+                    },
+
+                    1125: {
+                        slidesPerView: 3,
+                        spaceBetween: 23
+                    }
+                }
+
+
+
+            });
+
+            var swiper = new Swiper(".mySwiper-08", {
+                slidesPerView: 5,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+
+                /*   navigation: {
+                      nextEl: ".swiper-button-next",
+                      prevEl: ".swiper-button-prev",
+                  }, */
+
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+
+                speed: 700,
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1
+                    },
+                    501: {
+                        slidesPerView: 2
+                    },
+                    769: {
+                        slidesPerView: 3
+                    },
+                    1025: {
+                        slidesPerView: 4
+                    }
+                },
+            });
+
+            let topJavascript = document.querySelector('.javascript')
+
+            topJavascript.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+
+            });
+
+            let section02 = document.getElementsByClassName('section-02')[0];
+            let tabMenu = section02.querySelectorAll('.tab_menu li')
+            let tabCont = section02.querySelectorAll('.list')
+            //li 클릭했을때 실행
+            //list에게 클래스명 active를 추가
+            //첫 번쨰 li 에게 클릭하면 첫번째 list 에게 active 추가
+            //두 번째 li 에게 클릭하면 두번째 list 에게 active 추가
+
+            //tabContIndex = [tabCont[0], tabCont[1]]
+            for (let i = 0; i < tabMenu.length; i++) {
+                tabMenu[i].addEventListener('click', () => {
+                    tabCont.forEach(tabContIndex => {
+                        tabContIndex.classList.remove('active')
+                    });
+                    tabMenu.forEach(tabContIndex => {
+                        tabContIndex.classList.remove('active')
+                    });
+
+                    //list에게 클래스명 active를 추가
+                    tabCont[i].classList.add('active');
+                    //tab_menu li에게 클래스명 active를 추가
+                    tabMenu[i].classList.add('active')
+                });
+            }
+
+            let section03 = document.getElementsByClassName('section-03')[0];
+
+            let box = section03.getElementsByClassName('item')[0];
+            let Image = box.getElementsByClassName('image')[0];
+            let boxWrapper = Image.getElementsByClassName('image-wrapper')[0];
+            let boxPrev = section03.getElementsByClassName('prev')[0];
+            let boxStop = section03.getElementsByClassName('stop')[0];
+            let boxNext = section03.getElementsByClassName('next')[0];
+            let boxPlay = box.getElementsByClassName('play')[0];
+            let boxNum = section03.getElementsByClassName('num')[0];
+            let boxAllNum = section03.getElementsByClassName('all_num')[0];
+
+            let box2 = section03.getElementsByClassName('item')[1];
+            let Image2 = box2.getElementsByClassName('image')[0];
+            let boxWrapper2 = Image2.getElementsByClassName('image-wrapper')[0];
+            let boxPrev2 = box2.getElementsByClassName('prev')[0];
+            let boxStop2 = box2.getElementsByClassName('stop')[0];
+            let boxNext2 = box2.getElementsByClassName('next')[0];
+            let boxPlay2 = box2.getElementsByClassName('play')[0];
+            let boxNum2 = box2.getElementsByClassName('num')[0];
+            let boxAllNum2 = box2.getElementsByClassName('all_num')[0];
+
+
+            let cardList = ['img/사진뉴스/사진뉴스1.jpg', 'img/사진뉴스/사진뉴스 2.jpg', 'img/사진뉴스/사진뉴스3.jpg'];
+            let videoList = ['img/동영상뉴스/image 184.png', 'img/동영상뉴스/image 206.png', 'img/동영상뉴스/동영상 1.png']
+
+
+            let textList = ['1', '2', '3'];
+            let textList2 = ['1', '2', '3'];
+
+
+
+            //  전체 갯수 표시 
+            boxAllNum.innerHTML = '<b>/</b>' + cardList.length;
+            boxAllNum2.innerHTML = '<b>/</b>' + videoList.length;
+
+
+
+            // 사진뉴스 슬라이드
+            let i = 0;
+
+            // 클론 추가
+            let firstClone = boxWrapper.children[0].cloneNode(true);
+            boxWrapper.appendChild(firstClone);
+
+            // 슬라이드 이동 함수
+            function updateSlide(instant = false) {
+                if (instant) boxWrapper.style.transition = 'none';
+                else boxWrapper.style.transition = 'transform 0.6s ease';
+
+                boxWrapper.style.transform = `translateX(-${i * 25}%)`;
+                boxNum.innerHTML = textList[i % cardList.length];
+                boxWrapper.querySelector('img').src = cardList[i % cardList.length];
+            }
+
+            // 다음 슬라이드
+            function nextSlide() {
+                i++;
+                updateSlide();
+
+                // 마지막 클론 처리
+                if (i > cardList.length - 1) {
+                    setTimeout(() => {
+                        i = 0;
+                        updateSlide(true); // transition 없이 바로 첫 번째로 이동
+                    }, 600); // transition 시간과 동일
+                }
+            }
+
+            // 이전 슬라이드
+            function prevSlide() {
+                i--;
+                if (i < 0) {
+                    i = cardList.length - 1;
+                    updateSlide(true); // instant 이동
+                } else {
+                    updateSlide();
+                }
+            }
+
+            // 자동 슬라이드
+            let isPlaying = true;
+            let autoSlide = setInterval(nextSlide, 4000);
+
+            // 버튼 이벤트
+            boxNext.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+            boxPrev.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+
+
+            boxStop.addEventListener('click', () => {
+                if (isPlaying) {
+                    clearInterval(autoSlide);
+                    isPlaying = false;
+                    boxStop.querySelector('img').src = 'icon/뉴스 재생.svg'; // 정지 → 재생 이미지
+                } else {
+                    autoSlide = setInterval(nextSlide, 4000);
+                    isPlaying = true;
+                    boxStop.querySelector('img').src = 'icon/뉴스 정지.svg'; // 재생 → 정지 이미지
+                }
+            });
+
+            // 자동 재시작
+            function resetAutoSlide() {
+                if (isPlaying) {
+                    clearInterval(autoSlide);
+                    autoSlide = setInterval(nextSlide, 4000);
+                }
+            }
+
+            // 초기
+            updateSlide();
+
+            // ===================== 동영상뉴스 슬라이드 =====================
+            let j = 0;
+            let isPlaying2 = true;
+            let autoSlide2;
+
+            // 클론 추가 (첫 번째 이미지)
+            let firstClone2 = boxWrapper2.children[0].cloneNode(true);
+            boxWrapper2.appendChild(firstClone2);
+
+            // 슬라이드 이동 함수
+            function updateSlide2(instant = false) {
+                if (instant) boxWrapper2.style.transition = 'none';
+                else boxWrapper2.style.transition = 'transform 0.6s ease';
+
+                boxWrapper2.style.transform = `translateX(-${j * 25}%)`;
+                boxNum2.innerHTML = textList2[j % videoList.length];
+                boxWrapper2.querySelector('img').src = videoList[j % videoList.length];
+            }
+
+            // 다음 슬라이드
+            function nextSlide2() {
+                j++;
+                updateSlide2();
+
+                if (j > videoList.length - 1) { // 마지막 클론일 경우
+                    setTimeout(() => {
+                        j = 0;
+                        updateSlide2(true); // instant 이동
+                    }, 600); // transition 시간과 동일하게
+                }
+            }
+
+            // 이전 슬라이드
+            function prevSlide2() {
+                j--;
+                if (j < 0) {
+                    j = videoList.length - 1;
+                    updateSlide2(true); // instant 이동
+                } else {
+                    updateSlide2();
+                }
+            }
+
+            // 버튼 이벤트
+            boxNext2.addEventListener('click', () => { nextSlide2(); resetAutoSlide2(); });
+            boxPrev2.addEventListener('click', () => { prevSlide2(); resetAutoSlide2(); });
+
+
+            boxStop2.addEventListener('click', () => {
+                if (isPlaying2) {
+                    clearInterval(autoSlide2);
+                    isPlaying2 = false;
+                    boxStop2.querySelector('img').src = 'icon/뉴스 재생.svg'; // 정지 → 재생 이미지
+                } else {
+                    autoSlide2 = setInterval(nextSlide2, 4000);
+                    isPlaying2 = true;
+                    boxStop2.querySelector('img').src = 'icon/뉴스 정지.svg'; // 재생 → 정지 이미지
+                }
+            });
+
+            // 자동 슬라이드
+            function resetAutoSlide2() {
+                if (isPlaying2) {
+                    clearInterval(autoSlide2);
+                    autoSlide2 = setInterval(nextSlide2, 4000);
+                }
+            }
+
+            // 초기화
+            updateSlide2();
+            autoSlide2 = setInterval(nextSlide2, 4000);
+
+            // ===================== 알림판 슬라이드 =====================
+
+
+            let item2 = document.getElementsByClassName('item2')[0];
+
+            let Image3 = item2.getElementsByClassName('image')[0];
+            let boxImage = item2.getElementsByTagName('img')[2];
+            let boxPrev3 = item2.getElementsByClassName('prev')[0];
+            let boxNext3 = item2.getElementsByClassName('next')[0];
+            let boxNum3 = item2.getElementsByClassName('num')[0];
+            let boxAllNum3 = item2.getElementsByClassName('all_num')[0];
+
+            let newsList = ['img/news/1758507446440.png', 'img/news/1758150031612.png', 'img/news/1757635667843.png']
+            let textList3 = ['1', '2', '3'];
+            boxAllNum3.innerHTML = '<b>/</b>' + newsList.length;
+
+
+            boxNext3.addEventListener('click', () => {
+                i++;
+
+                if (i >= newsList.length) {
+                    i = 0;
+                }
+
+                boxImage.src = newsList[i];
+                boxNum3.innerHTML = textList3[i];
+            });
+
+            boxPrev3.addEventListener('click', () => {
+                i--;
+
+                if (i < 0) {
+                    i = newsList.length - 1;
+                }
+
+                boxImage.src = newsList[i];
+                boxNum3.innerHTML = textList3[i];
+            });
+
+
+
+        }; 
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div class="btn_top">
+        <button type="button" class="javascript">TOP</button>
+    </div><!-- .btn_top -->
+
+    <div id="header_top">
+        <div class="inner">
+            <img src="icon/헤더&메인/ico_태극기.svg" alt="태극기">
+            <p>이 누리집은 대한민국 공식 전자정부 누리집입니다.</p>
+        </div><!-- .inner -->
+    </div><!-- .header_top -->
+
+    <herader class="header">
+
+        <div class="header_in">
+            <div class="head_body">
+                <div class="inner">
+                    <ul class="util">
+                        <li>
+                            <a href="#">
+                                <p>어린이 누리집</p>
+                                <img src="icon/헤더&메인/ico_go.svg" alt="어린이 누리집">
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p>언어변경</p>
+                                <img src="icon/헤더&메인/ico_global.svg" alt="언어변경">
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p>지원</p>
+                                <img src="icon/헤더&메인/ico_angle (1).svg" alt="지원">
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p>글자·화면 설정</p>
+                                <img src="icon/헤더&메인/ico_view_mode.svg" alt="글자·화면 설정">
+
+                            </a>
+                        </li>
+
+
+                    </ul><!-- .util end -->
+
+                    <div class="head">
+                        <h1 class="logo">
+                            <a href=""><img src="logo/mcst_logo (1).svg" alt="로고"></a>
+                        </h1><!-- .logo -->
+
+                        <div class="nav_util">
+                            <div class="search_box">
+                                <input type="text" name="" id="" placeholder="검색어를 입력해주세요.">
+                                <img src="icon/헤더&메인/search_black.svg" alt="통합검색">
+                            </div><!-- .search_box -->
+
+                            <div class="search">
+                                <a href="#">
+                                    <img src="icon/헤더&메인/search_black.svg" alt="통합검색">
+                                    <p>통합검색</p>
+                                </a>
+                            </div><!-- .search -->
+
+                            <div class="login">
+                                <a href="#">
+                                    <img src="icon/헤더&메인/ico_login.svg" alt="로그인">
+                                    <p>로그인</p>
+                                </a>
+                            </div><!-- .login -->
+
+                            <div class="open_btn">
+                                <!-- <a href="#"></a> -->
+                                <div class="btn">
+                                    <img src="icon/헤더&메인/menu.svg" alt="전체메뉴">
+                                    <p>전체메뉴</p>
+                                </div><!-- .btn end -->
+
+                            </div><!-- .open_btn -->
+
+                        </div><!-- .nav_util -->
+                    </div><!-- .head -->
+                </div><!-- .inner -->
+
+
+            </div><!-- .head_body -->
+
+            <div class="head_gnb">
+                <div class="inner">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#" class="depth-01">정보공개</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">국민참여</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">알림·소식</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">문화광장</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">국제교류</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">자료공간</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">주요정책</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">문체부소개</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">이용안내</a>
+                            <ul class="depth-02">
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-1</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+
+                    </ul><!-- .gnb -->
+                </div><!-- .inner -->
+            </div><!-- .head_gnb -->
+
+
+        </div><!-- .header_in -->
+
+        <!-- <button class="nav_btn mobile">
+            <img src="icon/헤더&메인/menu.svg" alt="메뉴">
+        </button> --><!-- .nav_btn mobile -->
+
+        <nav class="nav_mobile mobile">
+
+            <button class="close_btn">
+            </button><!-- .close_btn -->
+
+            <ul class="gnb">
+                <li>
+                    <a href="#" class="depth-01">정보공개</a>
+                    <ul class="depth-02">
+                        <li><a href="#">menu1-1</a></li>
+                        <li><a href="#">menu1-2</a></li>
+                        <li><a href="#">menu1-3</a></li>
+                        <li><a href="#">menu1-4</a></li>
+                        <li><a href="#">menu1-5</a></li>
+                    </ul><!-- .depth-02 -->
+                </li>
+                <li>
+                    <a href="#" class="depth-01">국민참여</a>
+                    <ul class="depth-02">
+                        <li><a href="#">menu1-1</a></li>
+                        <li><a href="#">menu1-2</a></li>
+                        <li><a href="#">menu1-3</a></li>
+                        <li><a href="#">menu1-4</a></li>
+                        <li><a href="#">menu1-5</a></li>
+                    </ul><!-- .depth-02 -->
+                </li>
+                <li>
+                    <a href="#" class="depth-01">알림·소식</a>
+                    <ul class="depth-02">
+                        <li><a href="#">menu1-1</a></li>
+                        <li><a href="#">menu1-2</a></li>
+                        <li><a href="#">menu1-3</a></li>
+                        <li><a href="#">menu1-4</a></li>
+                        <li><a href="#">menu1-5</a></li>
+                    </ul><!-- .depth-02 -->
+                </li>
+                <li>
+                    <a href="#" class="depth-01">문화광장</a>
+                    <ul class="depth-02">
+                        <li><a href="#">menu1-1</a></li>
+                        <li><a href="#">menu1-2</a></li>
+                        <li><a href="#">menu1-3</a></li>
+                        <li><a href="#">menu1-4</a></li>
+                        <li><a href="#">menu1-5</a></li>
+                    </ul><!-- .depth-02 -->
+                </li>
+                <li>
+                    <a href="#" class="depth-01">국제교류</a>
+                    <ul class="depth-02">
+                        <li><a href="#">menu1-1</a></li>
+                        <li><a href="#">menu1-2</a></li>
+                        <li><a href="#">menu1-3</a></li>
+                        <li><a href="#">menu1-4</a></li>
+                        <li><a href="#">menu1-5</a></li>
+                    </ul><!-- .depth-02 -->
+                </li>
+                <li>
+                    <a href="#" class="depth-01">자료공간</a>
+                    <ul class="depth-02">
+                        <li><a href="#">menu1-1</a></li>
+                        <li><a href="#">menu1-2</a></li>
+                        <li><a href="#">menu1-3</a></li>
+                        <li><a href="#">menu1-4</a></li>
+                        <li><a href="#">menu1-5</a></li>
+                    </ul><!-- .depth-02 -->
+                </li>
+                <li>
+                    <a href="#" class="depth-01">주요정책</a>
+                    <ul class="depth-02">
+                        <li><a href="#">menu1-1</a></li>
+                        <li><a href="#">menu1-2</a></li>
+                        <li><a href="#">menu1-3</a></li>
+                        <li><a href="#">menu1-4</a></li>
+                        <li><a href="#">menu1-5</a></li>
+                    </ul><!-- .depth-02 -->
+                </li>
+                <li>
+                    <a href="#" class="depth-01">문체부소개</a>
+                    <ul class="depth-02">
+                        <li><a href="#">menu1-1</a></li>
+                        <li><a href="#">menu1-2</a></li>
+                        <li><a href="#">menu1-3</a></li>
+                        <li><a href="#">menu1-4</a></li>
+                        <li><a href="#">menu1-5</a></li>
+                    </ul><!-- .depth-02 -->
+                </li>
+                <li>
+                    <a href="#" class="depth-01">이용안내</a>
+                    <ul class="depth-02">
+                        <li><a href="#">menu1-1</a></li>
+                        <li><a href="#">menu1-2</a></li>
+                        <li><a href="#">menu1-3</a></li>
+                        <li><a href="#">menu1-4</a></li>
+                        <li><a href="#">menu1-5</a></li>
+                    </ul><!-- .depth-02 -->
+                </li>
+            </ul><!-- .gnb -->
+        </nav><!-- .nav_mobile end -->
+
+
+    </herader>
+
+    <main class="main">
+        <section class="main_visual">
+
+            <div class="image">
+                <!--  <div class="background">
+                </div> --><!-- background -->
+                <!-- <img src="img/헤더/Untitled-2.png" alt="헤더배경이미지"> -->
+            </div><!-- .image -->
+
+            <div class="inner">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slide_in">
+                                <div class="list">
+                                    <div class="text" style="width: 100%;">
+                                        <h2>혜택 가득한 '여행가는 가을'<br>캠페인..."가을 내내 여행 즐기세요"</h2>
+                                        <p>교통·숙박·여행상품 할인과 함께,
+                                            풍성한 가을 여행을 지금 만나보세요</p>
+                                    </div><!-- .text -->
+
+                                    <div class="visual_btn">
+                                        <a href="#">
+                                            <span>자세히 보러가기</span>
+                                            <img src="icon/헤더&메인/ico_angle (1) 3.svg" alt="우측화살표">
+                                        </a>
+                                    </div><!-- .visual_btn -->
+
+
+                                </div><!-- .list -->
+
+                                <a href="#">
+                                    <div class="image">
+                                        <img src="img/헤더/og_image_2025_fall 1.png" alt="">
+                                    </div><!-- .image -->
+                                </a>
+                            </div><!-- .slide_in -->
+                        </div><!-- swiper-slide end -->
+                        <div class="swiper-slide">
+
+                            <div class="slide_in">
+                                <div class="list">
+                                    <div class="text">
+                                        <h2>‘함께 만드는 예술정책 이야기’에 초대합니다</h2>
+                                        <p>공연예술통합전산망과 서계동복합문화시설, 예술요원제도, 국악문화산업 등을 주제로 논의</p>
+                                    </div><!-- .text -->
+
+                                    <div class="visual_btn">
+                                        <a href="#">
+                                            <span>자세히 보러가기</span>
+                                            <img src="icon/헤더&메인/ico_angle (1) 3.svg" alt="우측화살표">
+                                        </a>
+                                    </div><!-- .visual_btn -->
+
+
+                                </div><!-- .list -->
+
+                                <a href="#">
+                                    <div class="image">
+                                        <img src="img/헤더/1761527318589.jpg" alt="">
+                                    </div><!-- .image -->
+                                </a>
+                            </div><!-- .slide_in -->
+
+                        </div><!-- swiper-slide end -->
+                        <div class="swiper-slide">
+
+                            <div class="slide_in">
+                                <div class="list">
+                                    <div class="text">
+                                        <h2>공연·전시 할인권,<br>
+                                            더 많은 혜택으로 즐기세요</h2>
+                                        <p>공연‧전시 예매처별 매주 인당 2매 발급 가능,
+                                            비수도권 전용 할인권 금액 상향</p>
+                                    </div><!-- .text -->
+
+                                    <div class="visual_btn">
+                                        <a href="#">
+                                            <span>자세히 보러가기</span>
+                                            <img src="icon/헤더&메인/ico_angle (1) 3.svg" alt="우측화살표">
+                                        </a>
+                                    </div><!-- .visual_btn -->
+
+
+                                </div><!-- .list -->
+
+                                <a href="#">
+                                    <div class="image">
+                                        <img src="img/헤더/1758592767240.jpg" alt="">
+                                    </div><!-- .image -->
+                                </a>
+                            </div><!-- .slide_in -->
+
+                        </div><!-- swiper-slide end -->
+                    </div><!-- .swiper-wrapper end-->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+
+                </div><!-- swiper mySwiper end -->
+            </div>
+
+
+
+
+        </section><!-- .main_visual -->
+
+
+        <section class="section-01">
+            <div class="inner">
+                <h3>
+                    자주찾는 메뉴
+                    <strong>Quick Menu</strong>
+                </h3>
+
+
+                <div class="list">
+
+
+                    <div class="item">
+                        <div class="icon">
+                            <img src="icon/업무계획.png" alt="업무계획">
+                        </div><!-- .icon -->
+                        <div class="icon after">
+                            <img src="icon/업무계획.svg" alt="업무계획">
+                        </div><!-- .icon -->
+                        <div class="text">
+                            <span>업무계획</span>
+                        </div><!-- .text -->
+                    </div><!-- .item -->
+
+
+                    <div class="item">
+                        <div class="icon">
+                            <img src="icon/분야별정책.png" alt="분야별정책">
+                        </div><!-- .icon -->
+                        <div class="icon after">
+                            <img src="icon/업무계획.svg" alt="업무계획">
+                        </div><!-- .icon -->
+                        <div class="text">
+                            <span>분야별 정책</span>
+                        </div><!-- .text -->
+                    </div><!-- .item -->
+                    <div class="item">
+                        <div class="icon">
+                            <img src="icon/전자민원.png" alt="전자민원">
+                        </div><!-- .icon -->
+                        <div class="icon after">
+                            <img src="icon/업무계획.svg" alt="업무계획">
+                        </div><!-- .icon -->
+                        <div class="text">
+                            <span>전자민원</span>
+                        </div><!-- .text -->
+                    </div><!-- .item -->
+                    <div class="item">
+                        <div class="icon">
+                            <img src="icon/열린장관실.png" alt="열린장관실">
+                        </div><!-- .icon -->
+                        <div class="icon after">
+                            <img src="icon/업무계획.svg" alt="업무계획">
+                        </div><!-- .icon -->
+                        <div class="text">
+                            <span>열린장관실</span>
+                        </div><!-- .text -->
+                    </div><!-- .item -->
+                    <div class="item">
+                        <div class="icon">
+                            <img src="icon/적극행정.png" alt="적극행정">
+                        </div><!-- .icon -->
+                        <div class="icon after">
+                            <img src="icon/업무계획.svg" alt="업무계획">
+                        </div><!-- .icon -->
+                        <div class="text">
+                            <span>적극행정</span>
+                        </div><!-- .text -->
+                    </div><!-- .item -->
+                    <div class="item">
+                        <div class="icon">
+                            <img src="icon/직원검색.png" alt="직원검색">
+                        </div><!-- .icon -->
+                        <div class="icon after">
+                            <img src="icon/업무계획.svg" alt="업무계획">
+                        </div><!-- .icon -->
+                        <div class="text">
+                            <span>직원검색</span>
+                        </div><!-- .text -->
+                    </div><!-- .item -->
+                    <div class="item">
+                        <div class="icon">
+                            <img src="icon/문화예술공연.png" alt="문화예술공연">
+                        </div><!-- .icon -->
+                        <div class="icon after">
+                            <img src="icon/업무계획.svg" alt="업무계획">
+                        </div><!-- .icon -->
+                        <div class="text">
+                            <span>문화예술공연</span>
+                        </div><!-- .text -->
+                    </div><!-- .item -->
+                    <div class="item">
+                        <div class="icon">
+                            <img src="icon/조직도.png" alt="조직도">
+                        </div><!-- .icon -->
+                        <div class="icon after">
+                            <img src="icon/업무계획.svg" alt="업무계획">
+                        </div><!-- .icon -->
+                        <div class="text">
+                            <span>조직도</span>
+                        </div><!-- .text -->
+                    </div><!-- .item -->
+
+                </div><!-- .list -->
+            </div><!-- .inner -->
+        </section><!-- .section-01 -->
+
+        <section class="section-02">
+            <div class="inner">
+                <h3>알림소식</h3>
+
+                <ul class="tab_menu">
+                    <li class="active">공지</li>
+                    <li>채용</li>
+                    <li>입찰</li>
+                    <li>보도뉴스</li>
+                    <li>언론보도설명·정정</li>
+                </ul><!-- .tab_menu -->
+
+
+                <div class="list active">
+
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper_02">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4 class="special">새글</h4>
+
+                                        <div class="text_02">
+                                            <strong>(사)한국음악저작권협회 사용료 징수규정 개정안 의견수렴 공고
+                                            </strong>
+                                            <span>저작권법 제105조 및 동법 시행령 제49조에 의하여 사단법인 한국음악저작권협회 음악저작물 사용료 징수규정 개정안에 대하여 이해관계인의 의견을 수렴하기 위해 아래와 같이 공고합니다.</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.22</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>공지</h4>
+
+                                        <div class="text_02">
+                                            <strong>문화체육관광부 저작권 보상금수령단체 공모 공고</strong>
+                                            <span>문화체육관광부는 저작권법 제25조 제7항에 따라 저작권 보상금수령단체를지정하기 위하여 다음과 같이 공모합니다.</span>
+                                        </div><!-- .text_02 -->
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.20</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>공지</h4>
+
+                                        <div class="text_02">
+                                            <strong>2025 체육대회 개최 유공 정부포상 후보자 공개검증</strong>
+                                            <span>문화체육관광부는 2025년 체육대회개최유공 포상과 관련하여, 정부포상 추천후보자 명단을 참고하시기 바랍니다.</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>공지</h4>
+
+                                        <div class="text_02">
+                                            <strong>2025년 정책소통 유공 포상 후보자 추천 요청</strong>
+                                            <span>정부 및 공공부문의 주요 정책 소통에 적극 기여한 유공자를 발굴 포상하여 정책소통 관계자의 사기 진작 및 국민과의 정책소통 활성화</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>공지</h4>
+
+                                        <div class="text_02">
+                                            <strong>2026년 어르신 스포츠강좌 프로그램 지원 공모 알림</strong>
+                                            <span>지역 어르신의 스포츠종목 및 프로그램의 수요와 지역별 특색을 반영한 지자체 스포츠강좌 프로그램을 공모하고, 우수 기획사업 선정 지원</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>공지</h4>
+
+                                        <div class="text_02">
+                                            <strong>정부포상 대상자 공개 검증(고 신경하 목사)</strong>
+                                            <span>정부포상 대상자 고(故) 신경하 감독(목사)의 공적에 대한 국민의견을 수렴하고 공적 심사자료로 활용하고자 공개 검증을
+                                                실시하오니, 의견이 있으신 분은 2025.10.28.(화)까지 아래 이메일로 제출하여 주시기 바랍니다.</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.14</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+
+                        <div class="button-plus">
+                            <a href="#">
+                                <img src="icon/plus_.svg" alt="자세히보기" class="before">
+                                <img src="icon/plus_hover.svg" alt="자세히보기" class="after">
+                            </a>
+                        </div><!-- .button-plus end -->
+                    </div><!-- .swiper-wrapper -->
+
+
+                </div><!-- .list -->
+                <div class="list">
+
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper_02">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4 class="special">새글</h4>
+
+                                        <div class="text_02">
+                                            <strong>문화체육관광부(국립중앙박물관) 공무원 채용 서류합격자 및 면접시험 공고</strong>
+                                            <span>문화체육관광부 공무원 채용 서류전형 합격자 및 면접시험 계획을다음과 같이 공고합니다.</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.22</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4 class="special">새글</h4>
+
+                                        <div class="text_02">
+                                            <strong>문화체육관광부 해외홍보콘텐츠과 기간제 근로자 채용 최종합격자 공고</strong>
+                                            <span>문화체육관광부 해외홍보콘텐츠과 기간제 근로자(홍보원) 채용
+                                                최종 합격자를 아래와 같이 공고합니다.</span>
+                                        </div><!-- .text_02 -->
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.22</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>채용</h4>
+
+                                        <div class="text_02">
+                                            <strong>문화체육관광부 공무원 경력경쟁채용시험 공고</strong>
+                                            <span>문화체육관광부에서는 공무원임용시험령 제3조 및 제47조에 따라 우수 인재의 공직유치를 위한 국가공무원 경력경쟁채용시험을 다음과
+                                                같이 공고하여 시행하오니 많은 응시 바랍니다.</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>채용</h4>
+
+                                        <div class="text_02">
+                                            <strong>2025 문화체육관광부(국제체육과) 기간제근로자 채용 공고</strong>
+                                            <span>문화체육관광부 공고 2025-0314호
+                                                문화체육관광부(국제체육과)에서 기간제 근로자를 다음과 같이 공개모집하오니, 많은 지원 바랍니다.</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>채용</h4>
+
+                                        <div class="text_02">
+                                            <strong>문화체육관광부 담당급(한국예술종합학교 시설관리과장) 공모직위 공개모집(재공고)</strong>
+                                            <span>문화체육관광부에서는 담당급 공모직위인 ｢한국예술종합학교 시설관리과장｣ 직위에 대하여 다음과 같이 공개 모집하오니 유능한 인재의 많은 응모를 바랍니다</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>채용</h4>
+
+                                        <div class="text_02">
+                                            <strong>문화체육관광부 국제체육과 기간제 근로자 채용 최종합격자 공고</strong>
+                                            <span>문화체육관광부 국제체육과 기간제근로자(통번역직) 채용 최종 결과를 다음과 같이 공고합니다.</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.15</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div><!-- .swiper-wrapper -->
+
+
+                </div><!-- .list -->
+                <div class="list">
+
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper_02">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4 class="special">새글</h4>
+
+                                        <div class="text_02">
+                                            <strong>2026~2027년 해외홍보시스템 유지운영</strong>
+                                            <span>이 계약은 「국가를 당사자로 하는 계약에 관한 법률」 제5조의2에 따른 청렴계약제가 적용됩니다. 입찰자는 반드시 입찰서 제출
+                                                시</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.22</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4 class="special">새글</h4>
+
+                                        <div class="text_02">
+                                            <strong>옛 전남도청 개관 기념 기증전 전시연출 용역</strong>
+                                            <span>이 계약은 「국가를 당사자로 하는 계약에 관한 법률」 제5조의2에 따른 청렴계약제가 적용됩니다. 입찰자는 반드시 입찰서 제출
+                                                시</span>
+                                        </div><!-- .text_02 -->
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.22</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>입찰</h4>
+
+                                        <div class="text_02">
+                                            <strong>옛 전남도청 개관식 개최 대행 용역</strong>
+                                            <span>이 계약은 「국가를 당사자로 하는 계약에 관한 법률」 제5조의2에 따른 청렴계약제가 적용됩니다. 입찰자는 반드시 입찰서 제출
+                                                시</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>입찰</h4>
+
+                                        <div class="text_02">
+                                            <strong>2025년 범정부 디지털 정책소통 효과 측정 및 분석 용역 계약 요청</strong>
+                                            <span>이 계약은 「국가를 당사자로 하는 계약에 관한 법률」 제5조의2에 따른 청렴계약제가 적용됩니다. 입찰자는 반드시 입찰서 제출
+                                                시</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>입찰</h4>
+
+                                        <div class="text_02">
+                                            <strong>2025년 생활문화 실태 및 정책수요 조사 연구</strong>
+                                            <span>이 계약은 「국가를 당사자로 하는 계약에 관한 법률」 제5조의2에 따른 청렴계약제가 적용됩니다. 입찰자는 반드시 입찰서 제출
+                                                시</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>입찰</h4>
+
+                                        <div class="text_02">
+                                            <strong>전용차량 임차</strong>
+                                            <span>이 계약은 「국가를 당사자로 하는 계약에 관한 법률」 제5조의2에 따른 청렴계약제가 적용됩니다. 입찰자는 반드시 입찰서 제출
+                                                시</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div><!-- .swiper-wrapper -->
+
+
+                </div><!-- .list -->
+                <div class="list">
+
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper_02">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4 class="special">새글</h4>
+
+                                        <div class="text_02">
+                                            <strong>서울 선유도서관, 제주 표선중학교에 우수도서관 대통령 표창 수여</strong>
+                                            <span>문화체육관광부(장관 최휘영, 이하 문체부)는 도서관 운영과 서비스 발전에 기여한 우수도서관으로 서울특별시 선유도서관(공공도서관
+                                                부문)</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.22</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4 class="special">새글</h4>
+
+                                        <div class="text_02">
+                                            <strong>‘2025 도쿄 데플림픽’ 대한민국 선수단, 선전 결의 다짐</strong>
+                                            <span>문화체육관광부는 2025년 체육대회개최유공 포상과 관련하여, 정부포상 추천후보자 명단을...</span>
+                                        </div><!-- .text_02 -->
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.22</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4 class="special">새글</h4>
+
+                                        <div class="text_02">
+                                            <strong>‘공공디자인 페스티벌 2025’, 내일을 위한 공공디자인 조명</strong>
+                                            <span>문화체육관광부(장관 최휘영, 이하 문체부)는 한국공예·디자인문화진흥원(원장 장동광, 이하 공진원)과 함께 10월
+                                                24일(금)부터 11월 2일(일)까지</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.22</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>보도뉴스</h4>
+
+                                        <div class="text_02">
+                                            <strong>방송·연예·체육 분야 유명인과 국민 모두, ‘에이펙(APEC) 성공 개최’ 함께 응원해요</strong>
+                                            <span>문화체육관광부(장관 최휘영, 이하 문체부)는 ‘2025년 아시아태평양경제협력체(APEC, 이하 에이펙) 정상회의’ 성공적
+                                                개최에 대한 우리 사회의</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>보도뉴스</h4>
+
+                                        <div class="text_02">
+                                            <strong>‘게임 접근성 가이드라인’으로 모두가 게임을 즐길 수 있는 환경 만든다</strong>
+                                            <span>문화체육관광부(장관 최휘영, 이하 문체부)는 한국콘텐츠진흥원(원장 직무대리 유현석, 이하 콘진원)과 함께 장애인도
+                                                자유롭게</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>보도뉴스</h4>
+
+                                        <div class="text_02">
+                                            <strong>10월 ‘문화의 달’, 제주 서귀포에서 문화의 가치 되새긴다</strong>
+                                            <span>문화체육관광부(이하 문체부) 최휘영 장관은 10월 18일(토), 제주특별자치도 서귀포시(시장 오순문)를 찾아 제주 지역
+                                                문화·관광 현장</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.17</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div><!-- .swiper-wrapper -->
+
+
+                </div><!-- .list -->
+                <div class="list">
+
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper_02">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>언론보도설명·정정</h4>
+
+                                        <div class="text_02">
+                                            <strong>“경기장 압축 배치·총사업비 40% 이상 부담 파장”...2036 전주 하계올림픽 유치 초비상? </strong>
+                                            <span>전주 하계올림픽 유치 추진은 「국제경기대회 지원법」과 「국제행사의 유치·심사 등에 관한 규정」에 따라 전북특별자치도(이하
+                                                전북)</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.14</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>언론보도설명·정정</h4>
+
+                                        <div class="text_02">
+                                            <strong>대통령 집무실의 청와대 복귀 이후 청와대 관람 재개 방향</strong>
+                                            <span>대통령 집무실의 청와대 복귀 이후 청와대 관람 재개 방향과 청와대재단 존치 여부는 관계기관과 협의가 필요한 사항</span>
+                                        </div><!-- .text_02 -->
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.14</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>언론보도설명·정정</h4>
+
+                                        <div class="text_02">
+                                            <strong>문체부가 민간기구의 장을 교체하라고 명령했다는 보도는 사실이 아닙니다</strong>
+                                            <span>「공직자윤리법」 제3조의2에 따라 공직유관단체는 국가의 예산지원을 받거나 정부 업무를 위탁받아 수행하거나 대행하는
+                                                단체</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.14</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>언론보도설명·정정</h4>
+
+                                        <div class="text_02">
+                                            <strong>음원 플랫폼과 신탁관리단체와의 ‘계약 내용’을 문체부에 사전 승인</strong>
+                                            <span>문화체육관광부(이하 문체부)는 음원 플랫폼과 저작권 신탁관리단체와(이하 신탁단체)의 ‘계약 내용’의 사전 승인</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.14</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>언론보도설명·정정</h4>
+
+                                        <div class="text_02">
+                                            <strong>문화체육관광부의 국정기획위원회 업무보고 자료는 확정된 내용이 아닙니다</strong>
+                                            <span>국정기획위원회 업무보고 시 문체부의 자료에 포함된 문화재정 규모, 국립예술단체 지역 이전 등 세부 내용은 내부 검토안으로,
+                                                확정된 사항</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.14</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <div class="text">
+                                    <div class="text_01">
+                                        <h4>언론보도설명·정정</h4>
+
+                                        <div class="text_02">
+                                            <strong>‘오류 많은 점검 결과 새 정부 출범 전 발표.. 소명 연장은 불허’라는 음저협</strong>
+                                            <span>먼저, 문화체육관광부(이하 문체부)가 “새 정부 출범 전 발표를 고수하며 이례적으로 소명 기간 연장 없이 발표를
+                                                강행</span>
+                                        </div><!-- .text_02 -->
+
+                                    </div><!-- .text_01 -->
+
+                                    <div class="text_03">
+                                        <p>2025.10.14</p>
+                                    </div><!-- .text_03 -->
+                                </div><!-- .text -->
+                            </div><!-- .item -->
+
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div><!-- .swiper-wrapper -->
+
+
+                </div><!-- .list -->
+
+
+            </div><!-- .inner end -->
+        </section><!-- .section-02 -->
+
+        <section class="section-03">
+            <div class="inner">
+
+                <div class="news">
+                    <div class="item">
+                        <div class="item_top">
+                            <strong>사진뉴스</strong>
+
+                            <div class="list">
+                                <div class="page">
+                                    <span class="num">1</span>
+                                    <span class="all_num">1</span>
+                                </div><!-- .page -->
+
+                                <div class="btn">
+                                    <button class="prev"><img src="icon/뉴스 왼쪽 화살표.svg" alt="이전"></button>
+                                    <button class="stop"><img src="icon/뉴스 정지.svg" alt="정지"></button>
+
+                                    <button class="next"><img src="icon/뉴스 오른쪽.svg" alt="다음"></button>
+                                </div><!-- .btn -->
+                            </div><!-- .list -->
+
+                        </div><!-- .item_top -->
+
+                        <div class="image">
+                            <div class="image-wrapper">
+                                <img src="img/사진뉴스/사진뉴스1.jpg" alt="사진뉴스">
+                                <img src="img/사진뉴스/사진뉴스 2.jpg" alt="사진뉴스">
+                                <img src="img/사진뉴스/사진뉴스3.jpg" alt="사진뉴스">
+                                <img src="img/사진뉴스/사진뉴스1.jpg" alt="사진뉴스">
+                            </div><!-- .image-wrapper -->
+                        </div><!-- .image -->
+
+                    </div><!-- .item -->
+
+                    <div class="item">
+                        <div class="item_top">
+                            <strong>동영상 뉴스</strong>
+
+                            <div class="list">
+                                <div class="page">
+                                    <span class="num">1</span>
+                                    <span class="all_num">1</span>
+                                </div><!-- .page -->
+
+                                <div class="btn">
+                                    <button class="prev"><img src="icon/뉴스 왼쪽 화살표.svg" alt="이전"></button>
+                                    <button class="stop"><img src="icon/뉴스 정지.svg" alt="정지"></button>
+
+                                    <button class="next"><img src="icon/뉴스 오른쪽.svg" alt="다음"></button>
+                                </div><!-- .btn -->
+                            </div><!-- .list -->
+
+                        </div><!-- .item_top -->
+
+                        <div class="image">
+                            <div class="image-wrapper">
+                                <img src="img/동영상뉴스/image 184.png" alt="동영상뉴스">
+                                <img src="img/동영상뉴스/image 206.png" alt="동영상뉴스">
+                                <img src="img/동영상뉴스/동영상 1.png" alt="동영상뉴스">
+                                <img src="img/동영상뉴스/image 184.png" alt="동영상뉴스">
+                            </div><!-- .image-wrapper -->
+
+                        </div><!-- .image -->
+
+                    </div><!-- .item -->
+
+                </div><!-- .news -->
+
+            </div><!-- .inner -->
+        </section><!-- .section-03 -->
+
+
+        <div class="section-03-2">
+            <div class="inner">
+                <div class="news_02">
+                    <div class="content">
+                        <div class="box_top">
+                            <strong>국제교류</strong>
+                        </div><!-- .box_top -->
+                        <div class="content_box">
+                            <div class="text">
+                                <h4>한국문화원 소개</h4>
+                                <p>전 세계 35개 문화원을 통해<br> 한국문화를 홍보하고 있습니다!</p>
+                                <span>한국의 아름다운 문화를 세계에 알리고 국가 간 문화교류를 확대하기 위해 한국문화원을 운영하고 있습니다.</span>
+                            </div><!-- text -->
+                            <div class="list">
+                                <a href="#" class="item_box">
+                                    <div class="box_in">
+                                        <p>문화원 안내</p>
+                                        <div class="icon">
+                                            <img src="icon/icon 오른쪽 방향.bk.svg" alt="">
+                                        </div>
+                                    </div><!-- box_in -->
+                                </a><!-- .item_box -->
+                                <a href="#" class="item_box">
+                                    <div class="box_in">
+                                        <p>문화원 활동</p>
+                                        <div class="icon">
+                                            <img src="icon/icon 오른쪽 방향.bk.svg" alt="">
+                                        </div>
+                                    </div><!-- box_in -->
+                                </a><!-- .item_box -->
+                                <a href="#" class="item_box">
+                                    <div class="box_in">
+                                        <p>해외문화 동향</p>
+                                        <div class="icon">
+                                            <img src="icon/icon 오른쪽 방향.bk.svg" alt="">
+                                        </div>
+                                    </div><!-- box_in -->
+                                </a><!-- .item_box -->
+                                <a href="#" class="item_box">
+                                    <div class="box_in">
+                                        <p>외신 속의 한국</p>
+                                        <div class="icon">
+                                            <img src="icon/icon 오른쪽 방향.bk.svg" alt="">
+                                        </div>
+                                    </div><!-- box_in -->
+                                </a><!-- .item_box -->
+
+                            </div><!-- .list -->
+                        </div><!-- content_box -->
+                    </div><!-- .content -->
+
+
+                    <div class="item2">
+                        <div class="item_top">
+                            <strong>알림판</strong>
+
+                            <div class="list">
+                                <div class="page">
+                                    <span class="num">1</span>
+                                    <span class="all_num">1</span>
+                                </div><!-- .page -->
+
+                                <div class="btn">
+                                    <button class="prev"><img src="icon/뉴스 왼쪽 화살표.svg" alt="이전"></button>
+                                    <button class="next"><img src="icon/뉴스 오른쪽.svg" alt="다음"></button>
+                                </div><!-- .btn -->
+                            </div><!-- .list -->
+
+                        </div><!-- .item_top -->
+                        <div class="image">
+                            <img src="img/news/1758507446440.png" alt="알림판">
+                        </div><!-- .image -->
+
+                    </div><!-- .item2 -->
+                </div><!-- news_02-->
+            </div><!-- .inner -->
+        </div><!-- .section-03-2 -->
+
+        <section class="section-04">
+            <div class="inner">
+                <div class="main_2">
+                    <div class="main_text">
+
+                        <h3>주요정책</h3>
+                        <p>모두를 위한 문화,
+                            세계를 잇는
+                            문화강국으로</p>
+                        <span>문화체육관광부는 문화·예술·영상·광고·출판·간행물·체육·관광, 국정에 대한 홍보 및 정부발표에 관한 사무를 총괄합니다. </span>
+                    </div><!-- .main_text -->
+
+                </div><!-- .main_2 -->
+                <div class="main">
+                    <div class="main_content">
+                        <div class="main_text">
+                            <h3>주요정책</h3>
+                            <p>모두를 위한 문화,<br>
+                                세계를 잇는<br>
+                                문화강국으로</p>
+                            <span>문화체육관광부는 문화·예술·영상·광고·출판·간행물·체육·관광, 국정에 대한 홍보 및 정부발표에 관한 사무를 총괄합니다. </span>
+                        </div><!-- .main_text -->
+
+                        <div class="main_btn">
+                            <a href="#">
+                                <span>자세히 보러가기</span>
+                                <img src="icon/sec-04.svg" alt="우측화살표">
+                            </a>
+                        </div><!-- .main_btn -->
+                    </div><!-- .main_content -->
+                </div><!-- .main -->
+
+                <div class="slide">
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper_04">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item">
+                                <a href="#" class="box">
+                                    <img src="img/sec04-1.png" alt="">
+
+                                    <div class="list">
+                                        <div class="text">
+                                            <b>제1차 성균관·향교·서원전통문화 계승·발전 종합계획</b>
+                                            <p>전통을 넘어 미래로, 문화를 잇는 성균관·향교·서원</p>
+                                        </div><!-- text end -->
+                                        <div class="click">
+                                            <span>자세히 보러가기</span>
+                                            <img src="icon/ico_angle.svg" alt="우측화살표">
+                                        </div><!-- .click -->
+                                    </div><!-- list -->
+                                </a><!-- box end -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <a href="#" class="box">
+                                    <img src="img/sec04-2.png" alt="">
+
+                                    <div class="list">
+                                        <div class="text">
+                                            <b>통합문화이용권(문화누리카드)</b>
+                                            <p>삶의 질 향상과 문화격차 완화를 위해 기초생활수급자, 차상위계층을 대상으로 문화예술, 국내여행, 체육활동을 지원하는 카드</p>
+                                        </div><!-- text end -->
+                                        <div class="click">
+                                            <span>자세히 보러가기</span>
+                                            <img src="icon/ico_angle.svg" alt="우측화살표">
+                                        </div><!-- .click -->
+
+
+                                    </div>
+
+                                </a><!-- box end -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <a href="#" class="box">
+                                    <img src="img/sec04-3.png" alt="">
+                                    <div class="list">
+                                        <div class="text">
+
+                                            <b>2026년 문체부 예산안</b>
+                                            <p>K-컬처 확산을 위한, 전년 대비 10.3% 증가한 7조 7,962억 원 편성</p>
+
+                                        </div><!-- text end -->
+                                        <div class="click">
+                                            <span>자세히 보러가기</span>
+                                            <img src="icon/ico_angle.svg" alt="우측화살표">
+                                        </div><!-- .click -->
+
+                                    </div>
+
+                                </a><!-- box end -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <a href="#" class="box">
+                                    <img src="img/sec04-4.png" alt="">
+                                    <div class="list">
+                                        <div class="text">
+
+                                            <b>안심 글꼴</b>
+                                            <p>안심 글꼴파일 서비스를 활용하여 온라인으로 문서나 PPT작성 등도 가능하고 인쇄도 가능하며, 다른사람에게 보내줄 수도 있어요</p>
+                                        </div><!-- text end -->
+                                        <div class="click">
+                                            <span>자세히 보러가기</span>
+                                            <img src="icon/ico_angle.svg" alt="우측화살표">
+                                        </div><!-- .click -->
+
+                                    </div>
+
+                                </a><!-- box end -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <a href="#" class="box">
+                                    <img src="img/sec04-5.png" alt="">
+                                    <div class="list">
+                                        <div class="text">
+                                            <b>제4차 태권도 진흥 기본계획(2024~2028)</b>
+                                            <p>누구나 즐기는 태권도, 세계가 인정하는 케이-문화자산으로 만든다</p>
+                                        </div><!-- text end -->
+                                        <div class="click">
+                                            <span>자세히 보러가기</span>
+                                            <img src="icon/ico_angle.svg" alt="우측화살표">
+                                        </div><!-- .click -->
+
+                                    </div>
+
+                                </a><!-- box end -->
+                            </div><!-- .item -->
+
+                        </div><!-- swiper-wrapper  -->
+
+
+                        <div class="btn">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div><!-- .btn -->
+
+
+                        <!--  <div class="btn">
+                            <button class="prev"><img src="icon/뉴스 왼쪽 화살표.svg" alt="이전"></button>
+                            <button class="next"><img src="icon/뉴스 오른쪽.svg" alt="다음"></button>
+                        </div> -->
+
+                    </div><!-- swiper -->
+                </div>
+            </div><!-- .inner -->
+        </section><!-- .section-04 -->
+
+        <section class="section-05">
+            <div class="inner">
+                <div class="main">
+                    <div class="logo">
+                        <img src="logo/section/logo.svg" alt="정책브리핑">
+                    </div><!-- .logo -->
+                    <div class="click">
+                        <a href="#">
+                            <span>더보기</span>
+                            <img src="icon/ico-more.svg" alt="더보기플러스">
+                        </a>
+                    </div><!-- .click -->
+                </div><!-- .main -->
+
+
+                <ul class="list">
+                    <li>
+                        <p>문체부, ‘공연·전시 할인권’ 173만 장 재배포로 연말 문화소비 활성화</p>
+                        <span> 문화체육관광부가 공연 할인권 36만 장과 전시 할인권 137만 장을 재배포해 연말 성수기에 국민들이 부담 없이 문화생활을 즐길 수 있도록 한다.</span>
+                        <div class="bottom">
+                            <span>2025.09.23</span>
+                            <span>문화체육관광부</span>
+                        </div><!-- .bottom -->
+                    </li>
+                    <li>
+                        <p>사우디가 선택한 한국 중소벤처기업 29곳</p>
+                        <span>정부가 국내 중소벤처기업의 중동 진출을 위한 지원에 적극 나선다. 중소벤처기업부와 주사우디아라비아 대한민국 대사관이 협력해 현지 진출 기반을 강화하고 후속 지원을
+                            추진한다.</span>
+                        <div class="bottom">
+                            <span>2025.09.23</span>
+                            <span>문화체육관광부</span>
+                        </div><!-- .bottom -->
+                    </li>
+                    <li>
+                        <p>문체부, ‘공연·전시 할인권’ 173만 장 재배포로 국민 문화향유 기회 확대</p>
+                        <span> 문화체육관광부가 공연 할인권 36만 장과 전시 할인권 137만 장을 재배포해 연말 성수기에 국민들이 보다 폭넓게 문화생활을 즐길 수 있도록 지원한다</span>
+                        <div class="bottom">
+                            <span>2025.09.23</span>
+                            <span>문화체육관광부</span>
+                        </div><!-- .bottom -->
+                    </li>
+                    <li>
+                        <p>공연·전시 할인권 추가 배포로 문화소비 활성화 추진</p>
+                        <span> 문화체육관광부는 공연과 전시 분야의 소비 촉진을 위해 총 173만 장의 할인권을 추가로 배포하며, 연말 공연·전시 시장의 활력을 높이고 국민 문화참여를
+                            확대한다.</span>
+                        <div class="bottom">
+                            <span>2025.09.23</span>
+                            <span>문화체육관광부</span>
+                        </div><!-- .bottom -->
+                    </li>
+                    <li>
+                        <p>문체부, 연말 맞아 ‘공연·전시 할인권’ 대규모 재배포 실시</p>
+                        <span>문화체육관광부가 국민들의 문화생활 부담을 줄이고 예술계 회복을 돕기 위해 공연 할인권 36만 장과 전시 할인권 137만 장을 포함한 총 173만 장의 할인권을
+                            재배포한다</span>
+                        <div class="bottom">
+                            <span>2025.09.23</span>
+                            <span>문화체육관광부</span>
+                        </div><!-- .bottom -->
+                    </li>
+                </ul><!-- .list -->
+
+
+            </div><!-- .inner -->
+        </section>
+
+        <section class="section-06">
+            <div class="inner">
+
+
+                <div class="media">
+                    <div class="media_top">
+                        <strong>누리 SNS 소통망</strong>
+
+                        <div class="media_list">
+                            <a href="#">
+                                <div class="icon">
+                                    <img src="icon/ico_youtube.svg" alt="유튜브">
+                                    <p>유튜브</p>
+                                </div><!-- icon -->
+                            </a>
+                            <a href="#">
+                                <div class="icon">
+                                    <img src="icon/ico_instargram.svg" alt="인스타그램">
+                                    <p>인스타그램</p>
+                                </div><!-- icon -->
+                            </a>
+                            <a href="#">
+                                <div class="icon">
+                                    <img src="icon/ico_blog.svg" alt="블로그">
+                                    <p>블로그</p>
+                                </div><!-- icon -->
+                            </a>
+                            <a href="#">
+                                <div class="icon">
+                                    <img src="icon/ico_facebook.svg" alt="페이스북">
+                                    <p>페이스북</p>
+                                </div><!-- icon -->
+                            </a>
+
+                        </div><!-- .media_list -->
+                    </div><!-- .media_top -->
+
+
+                    <div class="swiper mySwiper_03">
+
+                        <div class="swiper-wrapper list">
+
+                            <div class="swiper-slide item">
+                                <a href="#" class="box">
+                                    <img src="img/youtube01.png" alt="">
+                                    <div class="text">
+                                        <img src="icon/ico_youtube.svg" alt="">
+                                        <p>🎇 박보검의 한복 화보 촬영 현장으로 안내합니다. 2025 한복웨이브 📽</p>
+                                    </div><!-- text end -->
+                                </a><!-- box end -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <a href="#" class="box">
+                                    <img src="img/youtube02.png" alt="">
+                                    <div class="text">
+                                        <img src="icon/ico_youtube.svg" alt="">
+                                        <p>배우 김아영과 함께하는 '여행가는 봄'🌸여행으로 설렘UP! 봄UP!🥰</p>
+                                    </div><!-- text end -->
+                                </a><!-- box end -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <a href="#" class="box">
+                                    <img src="img/youtube03.png" alt="">
+                                    <div class="text">
+                                        <img src="icon/ico_youtube.svg" alt="">
+                                        <p>단돈 천 원으로 영화 관람📽한 비결은? [미래는 정책 소통왕]</p>
+                                    </div><!-- text end -->
+                                </a><!-- box end -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <a href="#" class="box">
+                                    <img src="img/youtube04.png" alt="">
+                                    <div class="text">
+                                        <img src="icon/ico_youtube.svg" alt="">
+                                        <p>'코리아'하면 두세 곳은 떠올릴 수 있어야 하지 않을까요?</p>
+                                    </div><!-- text end -->
+                                </a><!-- box end -->
+                            </div><!-- .item -->
+                            <div class="swiper-slide item">
+                                <a href="#" class="box">
+                                    <img src="img/youtube01.png" alt="">
+                                    <div class="text">
+                                        <img src="icon/ico_youtube.svg" alt="">
+                                        <p>🎇 박보검의 한복 화보 촬영 현장으로 안내합니다. 2025 한복웨이브 📽</p>
+                                    </div><!-- text end -->
+                                </a><!-- box end -->
+                            </div><!-- .item -->
+
+                        </div><!-- swiper -->
+
+                        <!--   <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div> -->
+
+                    </div><!--swiper mySwiper  -->
+
+
+
+                </div><!-- .media -->
+            </div><!-- .inner -->
+        </section><!-- section-06 -->
+
+        <section class="section-07">
+            <div class="inner">
+                <div class="main">
+                    <div class="title">
+                        <div class="text">
+                            <h3>문화·예술·체육을 즐기며,<br>
+                                지역과 생활 속 문화를 경험하고,<br>
+                                다양한 즐거움을 느끼는 공간</h3>
+                        </div><!-- .text -->
+
+                        <div class="main07_btn">
+                            <a href="#">
+                                <span>자세히 보러가기</span>
+                                <img src="icon/sec-07.svg" alt="우측화살표">
+                            </a>
+                        </div><!-- .main07_btn -->
+                    </div><!-- title -->
+
+
+
+                    <div class="list_box">
+                        <div class="item">
+                            <a href="#">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="img/1761092516316.jpg" alt="">
+
+                                    </div><!-- .image -->
+                                    <p>정동문화축제</p>
+                                    <div class="con">
+                                        <div class="con_box">
+                                            <div class="con_text">
+                                                <div class="txt">
+                                                    <p>정동문화축제</p>
+                                                    <span>역사와 전통이 살아 숨쉬는 정동길은 걷는 것만으로도 소확행(小確幸)을 느낄 수 있는 곳이다. 사흘간의 축제 기간
+                                                        동안 정동로터리에는 거리 페스티벌과 ‘기억의 풍선’ 설치가 진행</span>
+                                                </div><!-- .txt -->
+                                                <div class="icon_more"></div>
+                                            </div><!-- .con_text -->
+                                        </div><!-- .con_box -->
+                                    </div><!-- con -->
+                                </div><!-- .box -->
+
+                            </a>
+                        </div><!-- .item -->
+                        <div class="item">
+                            <a href="#">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="img/1761178556348.jpg" alt="">
+
+                                    </div><!-- .image -->
+                                    <p>서초책있는거리 10월 북캠핑</p>
+                                    <div class="con">
+                                        <div class="con_box">
+                                            <div class="con_text">
+
+                                                <div class="txt">
+                                                    <p>서초책있는거리 10월 북캠핑</p>
+                                                    <span>서초책있는거리는 책을 매개로 문화와 사람을 연결하는 도심 속 책축제이다. 국립중앙도서관에서 서래공원까지 이어지는
+                                                        거리 곳곳이 책과 음악, 예술로 채워지며 도심 속 휴식과 여유를 선사한다.</span>
+                                                </div><!-- .txt -->
+                                                <div class="icon_more"></div>
+                                            </div><!-- .con_text -->
+                                        </div><!-- .con_box -->
+                                    </div><!-- con -->
+                                </div><!-- .box -->
+
+                            </a>
+                        </div><!-- .item -->
+
+                        <div class="item">
+                            <a href="#">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="img/1757549505723.jpg" alt="">
+
+                                    </div><!-- .image -->
+                                    <p>대한민국 청년의 날 축제</p>
+                                    <div class="con">
+                                        <div class="con_box">
+                                            <div class="con_text">
+
+                                                <div class="txt">
+                                                    <p>대한민국 청년의 날 축제</p>
+                                                    <span>흥미진진한 프로그램들로 청년들의 심장을 뛰게해줄 「2025 제9회 대한민국 청년의 날 축제」를
+                                                        기대해보자</span>
+                                                </div><!-- .txt -->
+                                                <div class="icon_more"></div>
+                                            </div><!-- .con_text -->
+                                        </div><!-- .con_box -->
+                                    </div><!-- con -->
+                                </div><!-- .box -->
+
+                            </a>
+                        </div><!-- .item -->
+                        <div class="item">
+                            <a href="#">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="img/1761094392141.jpg" alt="">
+
+                                    </div><!-- .image -->
+                                    <p>정읍사문화제</p>
+                                    <div class="con">
+                                        <div class="con_box">
+                                            <div class="con_text">
+
+                                                <div class="txt">
+                                                    <p>정읍사문화제</p>
+                                                    <span>정읍사 여인의 숭고한 사랑과 아름다운 부덕을 기리는 정읍시 축제로 1990년 제1회를 시작으로 올해 36번째
+                                                        맞이하는 정읍시 대표적인 축제</span>
+                                                </div><!-- .txt -->
+                                                <div class="icon_more"></div>
+                                            </div><!-- .con_text-->
+                                        </div><!-- .con_box -->
+                                    </div><!-- con -->
+                                </div><!-- .box -->
+
+                            </a>
+                        </div><!-- .item -->
+                        <div class="item">
+                            <a href="#">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="img/1758501634408.jpg" alt="">
+
+                                    </div><!-- .image -->
+                                    <p>예산사과축제</p>
+                                    <div class="con">
+                                        <div class="con_box">
+                                            <div class="con_text">
+
+                                                <div class="txt">
+                                                    <p>예산사과축제</p>
+                                                    <span>제22회 예산사과축제에서는 청춘사과에 관한 여러 에피소드로 한층 젊어진 예산사과 키워드로 축제 방문객들과
+                                                        만나고자 한다.</span>
+                                                </div><!-- .txt -->
+                                                <div class="icon_more"></div>
+                                            </div><!-- .con_text -->
+                                        </div><!-- .con_box -->
+                                    </div><!-- con -->
+                                </div><!-- .box -->
+
+                            </a>
+                        </div><!-- .item -->
+                        <div class="item">
+                            <a href="#">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="img/1761094065795.jpg" alt="">
+
+                                    </div><!-- .image -->
+                                    <p>청정완도 가을 섬 여행</p>
+                                    <div class="con">
+                                        <div class="con_box">
+                                            <div class="con_text">
+
+                                                <div class="txt">
+                                                    <p>청정완도 가을 섬 여행</p>
+                                                    <span>완도군 가을 대표축제인 2025 청정완도 가을 섬 여행은 완도 방문의 해를 맞아 완도왔섬 치유됐섬이라는 주제로
+                                                        진행된다. 일상에 지친 군민과 완도를 방문하는 관광객을 위해 무대공연, 다양한 체험 프로그램 등을 구성한
+                                                        축제</span>
+                                                </div><!-- .txt -->
+                                                <div class="icon_more"></div>
+                                            </div><!-- .con_text -->
+                                        </div><!-- .con_box -->
+                                    </div><!-- con -->
+                                </div><!-- .box -->
+
+                            </a>
+                        </div><!-- .item -->
+                        <div class="item">
+                            <a href="#">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="img/1761178711322.jpg" alt="">
+
+                                    </div><!-- .image -->
+                                    <p>전남 세계 김밥 페스티벌</p>
+                                    <div class="con">
+                                        <div class="con_box">
+                                            <div class="con_text">
+
+                                                <div class="txt">
+                                                    <p>전남 세계 김밥 페스티벌</p>
+                                                    <span>2025 전남 세계 김밥 페스티벌은 전남 김의 우수성을 세계적으로 알리고, 전남지역의 수산물 등을 활용하여
+                                                        세계인들도 즐길 수 있는 다양한 김밥을 표현, 전남 깁밥과 전남 수산물을 알리는 축제</span>
+                                                </div><!-- .txt -->
+                                                <div class="icon_more"></div>
+                                            </div><!-- .con_text -->
+                                        </div><!-- .con_box -->
+                                    </div><!-- con -->
+                                </div><!-- .box -->
+
+                            </a>
+                        </div><!-- .item -->
+                        <div class="item">
+                            <a href="#">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="img/1761269446274.jpg" alt="">
+
+                                    </div><!-- .image -->
+                                    <p>[거제] 달 샤베트</p>
+                                    <div class="con">
+                                        <div class="con_box">
+                                            <div class="con_text">
+
+                                                <div class="txt">
+                                                    <p>[거제] 달 샤베트</p>
+                                                    <span>늑대 아파트 주민들이 무더위에 지쳐 잠든 어느 밤…
+                                                        “똑, 똑, 똑…”
+                                                        달이 녹기 시작했어요!</span>
+                                                </div><!-- .txt -->
+                                                <div class="icon_more"></div>
+                                            </div><!-- .con_text -->
+                                        </div><!-- .con_box -->
+                                    </div><!-- con -->
+                                </div><!-- .box -->
+
+                            </a>
+                        </div><!-- .item -->
+                    </div><!-- list_box -->
+                </div><!-- .main -->
+            </div><!-- .inner -->
+        </section><!-- .section-07 end  -->
+
+
+
+        <section class="section-08">
+            <div class="inner">
+                <!-- Swiper -->
+                <div class="swiper mySwiper-08">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <a href="#" class="box">
+                                    <img src="logo/1723435875850.png" alt="">
+                                </a><!-- box end -->
+                            </div><!-- item end -->
+                        </div><!-- swiper-slide end -->
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <a href="#" class="box">
+                                    <img src="logo/1666576536479.gif" alt="">
+                                </a><!-- box end -->
+                            </div><!-- item end -->
+                        </div><!-- swiper-slide end -->
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <a href="#" class="box">
+                                    <img src="logo/1610502039149.gif" alt="">
+                                </a><!-- box end -->
+                            </div><!-- item end -->
+                        </div><!-- swiper-slide end -->
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <a href="#" class="box">
+                                    <img src="logo/1610501774300.gif" alt="">
+                                </a><!-- box end -->
+                            </div><!-- item end -->
+                        </div><!-- swiper-slide end -->
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <a href="#" class="box">
+                                    <img src="logo/1755840872246.jpg" alt="">
+                                </a><!-- box end -->
+                            </div><!-- item end -->
+                        </div><!-- swiper-slide end -->
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <a href="#" class="box">
+                                    <img src="logo/1735537957490.gif" alt="">
+                                </a><!-- box end -->
+                            </div><!-- item end -->
+                        </div><!-- swiper-slide end -->
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <a href="#" class="box">
+                                    <img src="logo/1671435661282.gif" alt="">
+                                </a><!-- box end -->
+                            </div><!-- item end -->
+                        </div><!-- swiper-slide end -->
+                    </div><!-- swiper-wrapper end -->
+
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                </div><!-- swiper mySwiper-08 end -->
+            </div><!-- .inner end -->
+
+        </section><!-- section-08 end -->
+
+
+        <footer class="footer">
+            <div class="inner">
+                <div class="footer_logo">
+                    <img src="logo/mcst_logo (1).svg" alt="푸터로고">
+                </div><!-- .footer_logo end -->
+                <div class="info_wrap">
+                    <div class="address">
+                        <ul>
+                            <li>30119 세종특별자치시 갈매로 388 정부세종청사 15동</li>
+                        </ul>
+                        <ul>
+                            <li>대표전화 : 044-203-2000</li>
+                            <li>(월~금 09:00~18:00, 공휴일 제외, 유료)</li>
+                            <li>팩스 : 044-203-3447</li>
+                        </ul>
+                        <ul>
+                            <li>해외이용 Tel : +82-44-203-2000</li>
+                            <li>Fax : +82-44-203-3447</li>
+                        </ul>
+
+                    </div><!-- address end -->
+
+                    <div class="f_link">
+                        <div class="link_map">
+                            <ul class="map_list">
+                                <li><a href="#">
+                                        이용안내<img src="icon/footer/footer.svg" alt="">
+                                    </a></li>
+                                <li><a href="#">
+                                        찾아오시는 길<img src="icon/footer/footer.svg" alt="">
+                                    </a></li>
+                            </ul><!-- .map_list end -->
+                        </div><!-- .link_map -->
+                        <div class="link_sns">
+                            <ul class="sns_list">
+                                <li>
+                                    <a href="#">
+                                        <img src="icon/footer/blog.svg" alt="블로그">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="icon/footer/f-instagram.svg" alt="인스타그램">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="icon/footer/f-youtube.svg" alt="유튜브">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="icon/footer/f-x.svg" alt="x">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="icon/footer/f-facebook.svg" alt="페이스북">
+                                    </a>
+                                </li>
+                            </ul><!-- .sns_list end -->
+                        </div><!-- .link_sns -->
+                    </div><!-- .f_link end -->
+                </div><!-- .info_wrap end -->
+                <div class="service_wrap">
+                    <div class="footer_nav">
+                        <ul class="service">
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">저작권 정책</a></li>
+                            <li><a href="#">행정서비스헌장</a></li>
+                            <li><a href="#">누리집 이용안내</a></li>
+                            <li><a href="#">누리집개선의견</a></li>
+                        </ul><!-- .service end -->
+
+                        <p class="copy">
+                            © Ministry of Culture, Sports and Tourism . All rights reserved.
+                        </p>
+                    </div><!-- .footer_nav end -->
+
+                    <div class="f-section">
+                        <ul class="list">
+                            <li>
+                                <a href="#"><img src="logo/footer/footer_open 1.svg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="logo/footer/wa_mark 1.svg" alt=""></a>
+                            </li>
+                        </ul><!-- .list end -->
+                    </div><!-- .f-section -->
+                </div><!-- .service_wrap end -->
+
+            </div><!-- inner end -->
+        </footer>
+
+    </main>
+
+
+
+
+</body>
+
+</html>
