@@ -1,25 +1,62 @@
 @charset "utf-8";
 @import url('reset.css');
 
+
 @font-face {
-    font-family: 'Pretendard';
-    font-weight: 800;
-    font-display: swap;
-    src: local('Pretendard ExtraBold'), url(./woff2-subset/Pretendard-ExtraBold.subset.woff2) format('woff2'), url(./woff-subset/Pretendard-ExtraBold.subset.woff) format('woff');
+	font-family: 'Pretendard';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Pretendard ExtraBold'), url(./woff2/Pretendard-ExtraBold.woff2) format('woff2'), url(./woff/Pretendard-ExtraBold.woff) format('woff');
 }
 
 @font-face {
-    font-family: 'Pretendard';
+	font-family: 'Pretendard';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Pretendard SemiBold'), url(./woff2/Pretendard-SemiBold.woff2) format('woff2'), url(./woff/Pretendard-SemiBold.woff) format('woff');
+}
+
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Medium'), url(./woff2/Pretendard-Medium.woff2) format('woff2'), url(./woff/Pretendard-Medium.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 300;
+	font-display: swap;
+	src: local('Pretendard Light'), url(./woff2/Pretendard-Light.woff2) format('woff2'), url(./woff/Pretendard-Light.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 200;
+	font-display: swap;
+	src: local('Pretendard ExtraLight'), url(./woff2/Pretendard-ExtraLight.woff2) format('woff2'), url(./woff/Pretendard-ExtraLight.woff) format('woff');
+}
+
+
+@font-face {
+    font-family: 'Shilla_Culture(B)';
+    src: url('Shilla_CultureB-Bold.woff2') format('woff2'),
+        url('Shilla_CultureB-Bold.woff') format('woff'),
+        url('Shilla_CultureB-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Shilla_Culture(M)';
+    src: url('Shilla_CultureM-Medium.woff2') format('woff2'),
+        url('Shilla_CultureM-Medium.woff') format('woff'),
+        url('Shilla_CultureM-Medium.ttf') format('truetype');
     font-weight: 500;
+    font-style: normal;
     font-display: swap;
-    src: local('Pretendard Medium'), url(./woff2/Pretendard-Medium.woff2) format('woff2'), url(./woff/Pretendard-Medium.woff) format('woff');
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 300;
-    font-display: swap;
-    src: local('Pretendard Light'), url(./woff2/Pretendard-Light.woff2) format('woff2'), url(./woff/Pretendard-Light.woff) format('woff');
 }
 
 
@@ -108,6 +145,7 @@ body {
 .header .header_in .head_body .inner .util li a p {
     font-size: 15px;
     font-family: 'Pretendard';
+    font-weight: 300;
 
 }
 
@@ -121,7 +159,6 @@ body {
 .header .header_in .head_body .inner .head .logo {}
 
 .header .header_in .head_body .inner .head .logo a {
-
     display: block;
     display: flex;
 
@@ -195,11 +232,15 @@ body {
     object-fit: cover;
 }
 
+.header .header_in .head_body .inner .head .nav_util .login{
+
+}
 
 .header .header_in .head_body .inner .head .nav_util .login a {
     display: flex;
     gap: 8px;
     align-items: center;
+    
 }
 
 .header .header_in .head_body .inner .head .nav_util .login a img {
@@ -208,7 +249,10 @@ body {
     object-fit: cover;
 }
 
-.header .header_in .head_body .inner .head .nav_util .login a p {}
+.header .header_in .head_body .inner .head .nav_util .login a p {
+    line-height: 1;
+    transform: translateY(1px); 
+}
 
 .header .header_in .head_body .inner .head .nav_util .open_btn {
     display: none;
@@ -503,6 +547,10 @@ body {
     display: none;
 }
 
+.main_visual .swiper-pagination-bullet-active{
+    background-color: #028090;
+}
+
 @media screen and (max-width: 1400px) {
     .main_visual .swiper {
         width: 100%;
@@ -666,7 +714,7 @@ body {
     color: #000000;
     align-content: center;
     text-align: center;
-
+    font-weight: 600;
 
 
 }
@@ -697,8 +745,6 @@ body {
 
 
 }
-
-.section-01 .inner .list .item:hover {}
 
 .section-01 .inner .list .item .icon {
     width: 100px;
@@ -862,7 +908,7 @@ body {
 .section-02 .inner h3 {
     font-size: 38px;
     font-family: 'Pretendard';
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-align: center;
 }
@@ -1060,6 +1106,7 @@ body {
     -webkit-line-clamp: 3;
     overflow: hidden;
     margin-bottom: 38px;
+    font-weight: 300;
 }
 
 .section-02 .inner .list .item .text .text_03 {
@@ -1074,7 +1121,6 @@ body {
 
 .section-02 .inner .list .item .text .text_03 p {}
 
-.section-02 .inner .list {}
 
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
     background: linear-gradient(45deg, #127EA5, #09B5AB);
@@ -1252,6 +1298,8 @@ body {
 
 .section-03 .inner .news .item .item_top strong {
     font-size: 28px;
+    font-weight: 600;
+    font-family: 'Pretendard';
 }
 
 .section-03 .inner .news .item .item_top .list {
@@ -1342,6 +1390,8 @@ body {
 
 .section-03-2 .inner .news_02 .content .box_top strong {
     font-size: 28px;
+    font-weight: 600;
+    font-family: 'Pretendard';
 
 }
 
@@ -1359,21 +1409,25 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    font-family: 'Pretendard';
 
 }
 
 .section-03-2 .inner .news_02 .content .content_box .text h4 {
     font-size: 18px;
+    font-weight: 500;
 
 }
 
 .section-03-2 .inner .news_02 .content .content_box .text p {
     font-size: 26px;
+    font-weight: 500;
 }
 
 .section-03-2 .inner .news_02 .content .content_box .text span {
     font-size: 16px;
     width: 85%;
+    font-weight: 300;
 }
 
 
@@ -1462,6 +1516,8 @@ body {
 
 .section-03-2 .inner .news_02 .item2 .item_top strong {
     font-size: 28px;
+    font-weight: 600;
+    font-family: 'Pretendard';
 }
 
 .section-03-2 .inner .news_02 .item2 .item_top .list {
@@ -1760,11 +1816,7 @@ body {
 }
 
 
-
-.section-04 .inner .main .main_content {}
-
 .section-04 .inner .main .main_content .main_text {
-    /* width: 20.28%; */
     width: 284px;
     color: #fff;
 
@@ -1773,7 +1825,7 @@ body {
 .section-04 .inner .main .main_content .main_text h3 {
     font-size: 32px;
     font-family: 'Pretendard';
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: 28px;
 }
 
@@ -1782,11 +1834,16 @@ body {
     font-family: 'Pretendard';
     font-weight: 500;
     margin-bottom: 16px;
+    letter-spacing: 0.05em;
+}
+
+.section-04 .inner .main .main_text span {
+    font-family: 'Pretendard';
+    font-weight: 200;
 }
 
 .section-04 .inner .main .main_content .main_btn {
     margin-top: 30px;
-
 
 }
 
@@ -1806,7 +1863,6 @@ body {
 .section-04 .inner .main .main_content .main_btn a span {
     display: block;
     font-size: 17px;
-
 
 }
 
@@ -1840,7 +1896,6 @@ body {
     border-radius: 20px;
     background-color: #F6F9F8;
     box-shadow: 5px 8px 8px rgba(59, 59, 59, 0.171);
-
 
 }
 
@@ -1889,6 +1944,7 @@ body {
 .section-04 .inner .slide .swiper .item a .list .text p {
     font-size: 17px;
     font-family: 'Pretendard';
+    font-weight: 300;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -1951,9 +2007,6 @@ body {
 
 .section-04 .btn {}
 
-
-
-.section-04 .inner .main .main_text span {}
 
 .section-04 .inner .swiper .swiper-wrapper {}
 
@@ -2177,6 +2230,7 @@ body {
     -webkit-line-clamp: 3;
     overflow: hidden;
     margin-bottom: 29px;
+    font-weight: 300;
 }
 
 .section-05 .inner .list li .bottom {
@@ -2249,9 +2303,10 @@ body {
 .section-06 .inner .media .media_top strong {
     font-size: 32px;
     font-family: 'Pretendard';
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
     margin-bottom: 20px;
     display: block;
+    font-weight: 600;
 }
 
 .section-06 .inner .media .media_top .media_list {
@@ -2426,10 +2481,19 @@ body {
     top: 300px;
 }
 
-.section-07 .inner .main .title .text h3 {
-    font-size: 28px;
-    font-family: 'Pretendard';
+.section-07 .inner .main .title .text{}
+
+.section-07 .inner .main .title .text h3{
+    font-size: 32px;
+    font-family: 'Shilla_Culture(B)';
     font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.section-07 .inner .main .title .text > p {
+    font-size: 28px;
+    font-family: 'Shilla_Culture(B)';
+    font-weight: 500;
     text-align: start;
     line-height: 1.7em;
     letter-spacing: 1.5px;
@@ -2651,6 +2715,10 @@ body {
 
     }
 
+    .section-07 .inner .main .title .text h3{
+        display: none;
+    }
+
     .section-07 .inner .main .list_box {
         width: 70%;
         margin: 0 auto;
@@ -2673,7 +2741,7 @@ body {
         margin-top: 30px;
     }
 
-    .section-07 .inner .main .title .text h3{
+    .section-07 .inner .main .title .text > p{
        text-align: center;
     }
 
@@ -2715,7 +2783,7 @@ body {
         top: 0;
        }
 
-       .section-07 .inner .main .title .text h3{
+       .section-07 .inner .main .title .text > p{
         font-size: 20px;
        }
 }
@@ -2794,7 +2862,9 @@ body {
 
 .footer {
     padding: 60px 0;
+    font-family: 'Pretendard';
     font-size: 15px;
+    font-weight: 300;
     background-color: #EBEBEB;
 }
 
@@ -2825,12 +2895,16 @@ body {
     gap: 20px;
 }
 
+.footer .inner .info_wrap .address ul:nth-child(1) li{
+    font-weight: 600;
+}
+
 .footer .inner .info_wrap .address ul:nth-child(2) li:first-child {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .footer .inner .info_wrap .address ul:nth-child(3) li:first-child {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .footer .inner .info_wrap .address ul li {
