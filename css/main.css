@@ -1988,11 +1988,9 @@ body {
 }
 
 @media screen and (max-width: 1124px) {
-
     .section-04 {
         margin-top: 100px;
     }
-
 
     .section-04 .inner {
         display: block;
@@ -2027,7 +2025,7 @@ body {
 
     .section-04 .btn {
         position: absolute;
-        bottom: -24px;
+        bottom: -40px;
         left: 50%;
         transform: translate(-50%, 0);
     }
@@ -2057,7 +2055,6 @@ body {
 @media screen and (max-width: 768px) {
     .section-04 {
         margin-top: 90px;
-
         /* 카드 크기 고정  */
     }
 
@@ -2198,7 +2195,7 @@ body {
 
 @media screen and (max-width: 1124px) {
     .section-05 {
-        margin-top: 350px;
+        margin-top: 200px;
     }
 
 }
@@ -2434,8 +2431,8 @@ body {
 }
 
 .section-07 .inner .main .title .main07_btn {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 40px;
+    margin-bottom: 12px;
 }
 
 .section-07 .inner .main .title .main07_btn a {
@@ -2664,7 +2661,11 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 100px 0 10px;
+        padding: 40px 0 20px;
+    }
+
+    .section-07 .inner .main .title .main07_btn{
+        margin-top: 30px;
     }
 
     .section-07 .inner .main .title .text h3{
@@ -2707,6 +2708,10 @@ body {
        }
        .section-07 .inner .main .list_box .item:nth-child(2n){
         top: 0;
+       }
+
+       .section-07 .inner .main .title .text h3{
+        font-size: 20px;
        }
 }
 
