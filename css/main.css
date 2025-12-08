@@ -1285,10 +1285,6 @@ body {
     position: relative;
     overflow: hidden;
     /* 이미지 밖 영역 숨김 */
-
-
-    background-color: #028090;
-
 }
 
 
@@ -1355,7 +1351,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: #F1F1F1;
-    padding: 45px 25px;
+    padding: 45px 30px;
 }
 
 .section-03-2 .inner .news_02 .content .content_box .text {
@@ -1377,11 +1373,12 @@ body {
 
 .section-03-2 .inner .news_02 .content .content_box .text span {
     font-size: 16px;
+    width: 85%;
 }
 
 
 .section-03-2 .inner .news_02 .content .content_box .list {
-    width: 35%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1452,6 +1449,7 @@ body {
 .section-03-2 .inner .news_02 .item2 {
     /* 36.71% */
     width: 514px;
+    
 }
 
 .section-03-2 .inner .news_02 .item2 .item_top {
@@ -1521,12 +1519,15 @@ body {
 @media screen and (max-width: 1190px) {
     .section-03-2 .inner .news_02 .content .content_box .text p {
         font-size: 24px;
+    }
 
-
+    .section-03-2 .inner .news_02 .content .content_box{
+         padding: 45px 30px;
     }
 
     .section-03-2 .inner .news_02 .content .content_box .text {
         width: 65%;
+       
     }
 
     .section-03-2 .inner .news_02 .content .content_box .list {
@@ -1576,7 +1577,9 @@ body {
 
     .section-03-2 .inner .news_02 .content .content_box {
         flex-direction: column;
+        justify-content: space-between;
         height: 370px;
+        padding: 20px 20px;
     }
 
     .section-03-2 .inner .news_02 .content .content_box .text p {
@@ -1596,11 +1599,9 @@ body {
 
     .section-03-2 .inner .news_02 .content .content_box .text {
         width: 100%;
+        gap: 20px;
     }
 
-    .section-03-2 .inner .news_02 .content .content_box {
-        padding: 20px 16px;
-    }
 
     .section-03-2 .inner .news_02 .content .content_box .list a.item_box {
         height: 60px;
@@ -1610,9 +1611,6 @@ body {
         width: 100%;
     }
 
-    .section-03-2 .inner .news_02 .content .content_box .text {
-        gap: 24px;
-    }
 
     /*  .section-03-2 .inner .news_02 .item2 .image {
         padding-bottom: 100%;
@@ -2228,6 +2226,7 @@ body {
 
 .section-06 {
     margin-top: 120px;
+    margin-bottom: 90px;
 }
 
 .section-06 .inner {
@@ -2393,19 +2392,20 @@ body {
 .section-07 {
     padding: 200px 0 240px;
     margin-bottom: 180px;
-    /*  background: url(../img/910148db9c939efb2df1660184d4faa4.svg); */
     background: #F9F5EC;
     background: linear-gradient(60deg, rgba(249, 245, 236, 1) 0%, rgba(249, 245, 236, 1) 6%, rgba(249, 245, 236, 0) 96%, rgba(249, 245, 236, 0) 100%);
     /* height: 960px;
     overflow: hidden; */
+
+
+    min-height: auto;   /* 또는 아예 height 제거 */
+    height: auto;
 }
 
 .section-07 .inner {
     max-width: 1400px;
     width: calc(100% - 40px);
     margin: 0 auto;
-
-
 
 }
 
@@ -2422,7 +2422,6 @@ body {
     margin: 0 auto;
     position: sticky;
     top: 300px;
-
 }
 
 .section-07 .inner .main .title .text h3 {
@@ -2435,7 +2434,8 @@ body {
 }
 
 .section-07 .inner .main .title .main07_btn {
-    margin-top: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .section-07 .inner .main .title .main07_btn a {
@@ -2454,8 +2454,6 @@ body {
 .section-07 .inner .main .title .main07_btn a span {
     display: block;
     font-size: 17px;
-
-
 }
 
 .section-07 .inner .main .title .main07_btn a img {
@@ -2478,10 +2476,6 @@ body {
     width: 49%;
     height: 420px;
     position: relative;
-
-    /*padding-bottom: 118.22%;  */
-
-
 
 }
 
@@ -2539,12 +2533,6 @@ body {
     border-radius: 30px;
     padding-bottom: 118.22%;
 
-
-
-
-
-
-
 }
 
 .section-07 .inner .main .list_box .item a .box .image img {
@@ -2597,8 +2585,6 @@ body {
     background: rgba(0, 0, 0, 0.639);
     border-radius: 30px;
 
-
-
 }
 
 .section-07 .inner .main .list_box .item a .box .con .con_box .con_text {
@@ -2649,25 +2635,11 @@ body {
 
 }
 
-@media screen and (max-width: 1270px) {
-    /* 이미지 사이즈 조절 */
-
-
-    /*   .section-07 .inner .main {
-        padding-right: 0;
-    }
-
-    .section-07 .inner .main .text {
-        margin: 0;
-    } */
-}
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1124px) {
     .section-07 {
         background: #F9F5EC;
-        background: linear-gradient(181deg, rgba(249, 245, 236, 0.3) 0%, rgba(249, 245, 236, 0.3) 100%);
         margin-top: 100px;
-        margin-bottom: 400px;
+        margin-bottom: 180px;
         padding: 0;
     }
 
@@ -2679,15 +2651,14 @@ body {
 
     .section-07 .inner .main .list_box {
         width: 70%;
-        margin: 50px auto 0;
-
-
+        margin: 0 auto;
+        padding-bottom: 200px;
     }
 
     .section-07 .inner .main .title {
         top: 0;
         background: #F9F5EC;
-        background: linear-gradient(181deg, rgba(249, 245, 236, 1) 0%, rgba(249, 245, 236, 1) 45%, rgba(249, 245, 236, 0.3) 100%);
+        background: linear-gradient(181deg, rgba(249, 245, 236, 1) 0%, rgba(249, 245, 236, 1) 85%, rgba(249, 245, 236, 0.3) 100%);
         z-index: 99;
         width: 100%;
         display: flex;
@@ -2696,21 +2667,47 @@ body {
         padding: 100px 0 10px;
     }
 
+    .section-07 .inner .main .title .text h3{
+       text-align: center;
+    }
 
     /* 1개 */
+    .section-07 .inner .main .list_box .item {
+        width: 48%;
+    }
 
-    .section-07 .inner .main .list_box .item {}
+    .section-07 .inner .main .list_box .item a .box .con {
+  z-index: 1;   /* ← 기존 99에서 낮춤 */
+}
+
 
 }
 
 @media screen and (max-width: 768px) {
     .section-07 .inner .main .list_box {
-        width: 100%;
+        
+         width: 90%;
     }
+       .section-07 .inner .main .list_box .item {
+         height: 390px;
+    }
+    
+}
 
-    .section-07 .inner .main .title {
-        position: static;
-    }
+@media screen and (max-width: 500px) {
+       .section-07 .inner .main .list_box{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 0;
+       }
+       .section-07 .inner .main .list_box .item{
+        width: 80%;
+       }
+       .section-07 .inner .main .list_box .item:nth-child(2n){
+        top: 0;
+       }
 }
 
 
