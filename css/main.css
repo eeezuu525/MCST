@@ -1673,6 +1673,9 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+    .section-03{
+        margin-top: 150px;
+    }
     .section-03 .inner .news .item .item_top strong {
         font-size: 22px;
     }
@@ -1692,7 +1695,7 @@ body {
 .section-04 .inner .main_2 {
     width: 100%;
     height: 384px;
-    background-color: #028090;
+    background-color: #05668D;
     border-radius: 35px 35px 0 0;
     padding: 0 50px;
 
@@ -1723,12 +1726,6 @@ body {
 }
 
 
-/* .section-04 .swiper{
-    position: static;
-} */
-/* 초기화 */
-
-
 .section-04 {
     margin-top: 180px;
 }
@@ -1756,7 +1753,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-color: #028090;
+    background-color: #05668D;
     border-radius: 0 50px 0 0;
     padding: 90px 0 80px;
     padding-right: 45px;
@@ -2212,6 +2209,10 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+
+    .section-05 {
+            margin-top: 150px;
+        }
     .section-05 .inner .list li {
         width: 32.33%;
     }
@@ -2275,8 +2276,6 @@ body {
     background-color: #F4F6F9;
     border-radius: 40px;
     padding-right: 20px;
-
-
 
 
 }
@@ -2365,6 +2364,11 @@ body {
         font-size: 28px;
     }
 
+    .section-06 .inner .media .media_top .media_list a .icon{
+        background-color: inherit;
+        padding-right: 10px;
+    }
+
     .section-06 .inner .media .media_top .media_list a .icon p {
         display: none;
     }
@@ -2381,6 +2385,7 @@ body {
 
     .section-06 .inner .media .media_top .media_list {
         justify-content: start;
+        gap: 10px;
     }
 }
 
